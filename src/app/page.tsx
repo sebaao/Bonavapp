@@ -50,7 +50,7 @@ export default function Home() {
 
   const [search, setSearch] = useState("");
   const [distance, setDistance] = useState(50);
-  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedCity, setSelectedCity] = useState("All Cities");
   const [selectedLanguage, setSelectedLanguage] = useState("en");
   const [selectedDiets, setSelectedDiets] = useState<string[]>([]);
   const [selectedRestrictions, setSelectedRestrictions] = useState<string[]>([]);
@@ -64,9 +64,7 @@ export default function Home() {
     return cityList;
   }, [restaurantsData]);
   
-  React.useEffect(() => {
-    if (!selectedCity && cities.length > 0) setSelectedCity("All Cities");
-  }, [cities, selectedCity]);
+
 
   const filteredRestaurants = useMemo(() => {
     return restaurantsData.filter(r => {
@@ -89,7 +87,7 @@ export default function Home() {
       if (selectedReligious.length && !selectedReligious.some(d => r.tags.includes(d))) return false;
       return true;
     });
-  }, [search, distance, selectedCity, selectedDiets, selectedRestrictions, selectedReligious]);
+  }, [restaurantsData, search, distance, selectedCity, selectedDiets, selectedRestrictions, selectedReligious]);
 
   // Calcular estadísticas en tiempo real
   const verifiedRestaurants = useMemo(() => {

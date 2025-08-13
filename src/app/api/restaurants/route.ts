@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
       priceLevel: body.priceLevel || 1,
       rating: body.rating || 0,
       tags: body.tags || [],
-      image: body.image || 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
+      image: body.image || '/images/logo.png',
       distance: body.distance || 0,
       website: body.website || '',
       phone: body.phone || '',

@@ -87,14 +87,16 @@ const HomePage = () => {
 
             {/* Right Content - Image */}
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  alt="People enjoying food at restaurant"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-green-100 to-blue-100 p-8">
+                <div className="flex items-center justify-center h-64">
+                  <div className="text-center">
+                    <div className="bg-green-600 rounded-full p-6 mx-auto mb-4 w-20 h-20 flex items-center justify-center">
+                      <Shield className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Safe Dining Experience</h3>
+                    <p className="text-gray-600">Find certified restaurants near you</p>
+                  </div>
+                </div>
                 <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-green-600 text-white p-3 rounded-full shadow-lg">
                     <Shield className="w-6 h-6" />

@@ -58,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({
         <div className="hidden md:flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
           <MapPin className="w-4 h-4 text-gray-600" />
           <span className="text-sm font-medium text-gray-700">
-            {selectedCity || "All Cities"}
+            {selectedCity}
           </span>
         </div>
 
@@ -134,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <div className="flex items-center gap-2 bg-gray-50 px-4 py-3 rounded-full border border-gray-200">
               <MapPin className="w-4 h-4 text-gray-600" />
               <span className="text-sm font-medium text-gray-700">
-                {selectedCity || "All Cities"}
+                {selectedCity}
               </span>
             </div>
 
