@@ -2,9 +2,33 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+interface RestaurantBody {
+  name: string;
+  category: string;
+  description?: string;
+  location: string;
+  hours?: string;
+  isOpen?: boolean;
+  priceLevel?: number;
+  rating?: number;
+  tags?: string[];
+  image?: string;
+  distance?: number;
+  website?: string;
+  phone?: string;
+  menu?: Array<{
+    title: string;
+    items: Array<{
+      name: string;
+      description: string;
+      price: string;
+    }>;
+  }>;
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    const body: RestaurantBody = await request.json();
     
     // Validación básica
     if (!body.name || !body.category || !body.location) {
@@ -20,7 +44,7 @@ export async function POST(request: NextRequest) {
     const restaurants = JSON.parse(jsonData);
 
     // Generar nuevo ID (el siguiente número después del más alto)
-    const maxId = Math.max(...restaurants.map((r: any) => parseInt(r.id)));
+    const maxId = Math.max(...restaurants.map((r: { id: string }) => parseInt(r.id)));
     const newId = (maxId + 1).toString();
 
     // Crear el nuevo restaurante

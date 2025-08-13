@@ -1,9 +1,38 @@
 'use client';
 
 import React from "react";
+import Image from "next/image";
+
+interface Restaurant {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  location: string;
+  hours: string;
+  isOpen: boolean;
+  priceLevel: number;
+  rating: number;
+  tags: string[];
+  image: string;
+  distance: number;
+  website: string;
+  phone: string;
+  menu: Array<{
+    title: string;
+    items: Array<{
+      name: string;
+      description: string;
+      price: string;
+    }>;
+  }>;
+  reviews: string[];
+  verified: boolean;
+  createdAt: string;
+}
 
 interface RestaurantCardProps {
-  restaurant: any;
+  restaurant: Restaurant;
   onDetails: (id: string) => void;
 }
 
@@ -53,9 +82,11 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, onDetails }
   return (
     <div className="bg-white text-[var(--foreground)] rounded-xl sm:rounded-2xl shadow-lg p-3 sm:p-4 flex flex-col gap-2 sm:gap-3 border border-[var(--secondary)] hover:shadow-xl hover:scale-105 transition-all duration-200 ease-in-out cursor-pointer">
       <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-2">
-        <img
+        <Image
           src={restaurant.image}
           alt={restaurant.name}
+          width={400}
+          height={225}
           className="w-full h-full object-cover"
         />
         <span className="absolute top-3 left-3 bg-[var(--badge-green)] text-white text-xs font-bold px-3 py-1 rounded-full shadow">✓ Verified</span>

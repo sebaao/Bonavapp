@@ -10,9 +10,9 @@ interface FiltersProps {
   onDistanceChange: (value: number) => void;
   selectedCity: string;
   cities: string[];
-  onCityChange: (city: string) => void;
+  onCityChange: (value: string) => void;
   selectedLanguage: string;
-  onLanguageChange: (lang: string) => void;
+  onLanguageChange: (value: string) => void;
   selectedDiets: string[];
   onDietChange: (diet: string) => void;
   selectedRestrictions: string[];

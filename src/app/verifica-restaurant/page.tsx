@@ -92,8 +92,6 @@ export default function VerificaRestaurant() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
-    setSuccess('');
     setIsSubmitting(true);
 
     try {

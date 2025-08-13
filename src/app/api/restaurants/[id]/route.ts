@@ -2,22 +2,74 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+interface Restaurant {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  location: string;
+  hours: string;
+  isOpen: boolean;
+  priceLevel: number;
+  rating: number;
+  tags: string[];
+  image: string;
+  distance: number;
+  website: string;
+  phone: string;
+  menu: Array<{
+    title: string;
+    items: Array<{
+      name: string;
+      description: string;
+      price: string;
+    }>;
+  }>;
+  reviews: string[];
+  verified: boolean;
+  createdAt: string;
+}
+
+interface UpdateBody {
+  name?: string;
+  category?: string;
+  description?: string;
+  location?: string;
+  hours?: string;
+  isOpen?: boolean;
+  priceLevel?: number;
+  rating?: number;
+  tags?: string[];
+  image?: string;
+  distance?: number;
+  website?: string;
+  phone?: string;
+  menu?: Array<{
+    title: string;
+    items: Array<{
+      name: string;
+      description: string;
+      price: string;
+    }>;
+  }>;
+  verified?: boolean;
+}
+
 export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    const body = await request.json();
-    const restaurantId = params.id;
+    const body: UpdateBody = await request.json();
+    const { id } = params;
 
     // Leer el archivo JSON actual
     const jsonPath = path.join(process.cwd(), 'data', 'restaurants.json');
     const jsonData = await fs.readFile(jsonPath, 'utf8');
-    const restaurants = JSON.parse(jsonData);
+    const restaurants: Restaurant[] = JSON.parse(jsonData);
 
     // Encontrar el restaurante por ID
-    const restaurantIndex = restaurants.findIndex((r: any) => r.id === restaurantId);
-    
+    const restaurantIndex = restaurants.findIndex(r => r.id === id);
     if (restaurantIndex === -1) {
       return NextResponse.json(
         { error: 'Restaurant not found' },
@@ -29,8 +81,8 @@ export async function PUT(
     const updatedRestaurant = {
       ...restaurants[restaurantIndex],
       ...body,
-      id: restaurantId, // Asegurar que el ID no cambie
-      createdAt: restaurants[restaurantIndex].createdAt || new Date().toISOString() // Mantener fecha de creación
+      id: restaurants[restaurantIndex].id, // Mantener el ID original
+      createdAt: restaurants[restaurantIndex].createdAt // Mantener la fecha de creación
     };
 
     restaurants[restaurantIndex] = updatedRestaurant;
@@ -58,16 +110,15 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    const restaurantId = params.id;
+    const { id } = params;
 
-    // Leer el archivo JSON
+    // Leer el archivo JSON actual
     const jsonPath = path.join(process.cwd(), 'data', 'restaurants.json');
     const jsonData = await fs.readFile(jsonPath, 'utf8');
-    const restaurants = JSON.parse(jsonData);
+    const restaurants: Restaurant[] = JSON.parse(jsonData);
 
     // Encontrar el restaurante por ID
-    const restaurant = restaurants.find((r: any) => r.id === restaurantId);
-    
+    const restaurant = restaurants.find(r => r.id === id);
     if (!restaurant) {
       return NextResponse.json(
         { error: 'Restaurant not found' },
@@ -78,7 +129,7 @@ export async function GET(
     return NextResponse.json(restaurant);
 
   } catch (error) {
-    console.error('Error fetching restaurant:', error);
+    console.error('Error reading restaurant:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

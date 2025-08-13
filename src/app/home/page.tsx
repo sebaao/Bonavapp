@@ -1,6 +1,5 @@
 'use client';
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { 
   Shield, 
@@ -251,7 +250,7 @@ const HomePage = () => {
                 </div>
               </div>
               <p className="text-gray-700 mb-4">
-                "This is exactly what I needed when looking for vegan options during lunch breaks! No more worrying about cross-contamination."
+                &quot;This is exactly what I needed when looking for vegan options during lunch breaks! No more worrying about cross-contamination.&quot;
               </p>
               <div className="flex items-center justify-between">
                 <div>
@@ -275,7 +274,7 @@ const HomePage = () => {
                 </div>
               </div>
               <p className="text-gray-700 mb-4">
-                "I can find halal food options easily now. The certification verification gives me complete peace of mind."
+                &quot;I can find halal food options easily now. The certification verification gives me complete peace of mind.&quot;
               </p>
               <div className="flex items-center justify-between">
                 <div>
@@ -299,7 +298,7 @@ const HomePage = () => {
                 </div>
               </div>
               <p className="text-gray-700 mb-4">
-                "Finally, a platform that truly understands gluten-free needs. The detailed allergen information is a lifesaver!"
+                &quot;Finally, a platform that truly understands gluten-free needs. The detailed allergen information is a lifesaver!&quot;
               </p>
               <div className="flex items-center justify-between">
                 <div>
@@ -338,7 +337,7 @@ const HomePage = () => {
                 Ready to eat with <span className="text-yellow-400">confidence?</span>
               </h2>
               <p className="text-white/90 text-lg">
-                Join thousands of people who've found food freedom. Start your journey to safe, delicious dining today.
+                Join thousands of people who&apos;ve found food freedom. Start your journey to safe, delicious dining today.
               </p>
 
               {/* Email Input */}

@@ -1,13 +1,42 @@
 'use client';
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { MapPin, Phone, Globe, Clock, Star, X, Info, Utensils, MessageSquare } from "lucide-react";
 
+interface Restaurant {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  location: string;
+  hours: string;
+  isOpen: boolean;
+  priceLevel: number;
+  rating: number;
+  tags: string[];
+  image: string;
+  distance: number;
+  website: string;
+  phone: string;
+  menu: Array<{
+    title: string;
+    items: Array<{
+      name: string;
+      description: string;
+      price: string;
+    }>;
+  }>;
+  reviews: string[];
+  verified: boolean;
+  createdAt: string;
+}
+
 interface RestaurantModalProps {
-  restaurant: any;
+  restaurant: Restaurant | null;
   isOpen: boolean;
   onClose: () => void;
-  onAddReview: (review: any) => void;
+  onAddReview: (review: string) => void;
 }
 
 const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, isOpen, onClose, onAddReview }) => {
@@ -24,117 +53,79 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, isOpen, o
 
   const renderDetailsTab = () => (
     <div className="space-y-6">
-      {/* Información básica */}
-      <div className="bg-gray-50 rounded-xl p-6">
-        <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">Restaurant Information</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex items-center gap-3">
-            <MapPin className="w-5 h-5 text-gray-500" />
-            <div>
-              <p className="font-medium text-gray-900">Location</p>
-              <p className="text-gray-600">{restaurant.location}</p>
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Restaurant Information</h3>
+          <div className="space-y-3">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-gray-500" />
+              <span className="text-gray-700">{restaurant.location}</span>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <Clock className="w-5 h-5 text-gray-500" />
-            <div>
-              <p className="font-medium text-gray-900">Hours</p>
-              <p className="text-gray-600">{restaurant.hours}</p>
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4 text-gray-500" />
+              <span className="text-gray-700">{restaurant.hours}</span>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <Phone className="w-5 h-5 text-gray-500" />
-            <div>
-              <p className="font-medium text-gray-900">Phone</p>
-              <p className="text-gray-600">{restaurant.phone}</p>
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-gray-500" />
+              <span className="text-gray-700">{restaurant.phone}</span>
             </div>
+            {restaurant.website && (
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-gray-500" />
+                <a href={restaurant.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  {restaurant.website}
+                </a>
+              </div>
+            )}
           </div>
-          <div className="flex items-center gap-3">
-            <Globe className="w-5 h-5 text-gray-500" />
-            <div>
-              <p className="font-medium text-gray-900">Website</p>
-              <a href={restaurant.website} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">
-                Visit website
-              </a>
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold mb-3">Additional Details</h3>
+          <div className="space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="text-gray-500">Distance:</span>
+              <span className="text-gray-700">{restaurant.distance} km</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-gray-500">Price Level:</span>
+              <span className="text-gray-700">{"💲".repeat(restaurant.priceLevel)}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-gray-500">Status:</span>
+              <span className={`px-2 py-1 rounded-full text-xs font-medium ${restaurant.isOpen ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                {restaurant.isOpen ? 'Open' : 'Closed'}
+              </span>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Descripción */}
+      
       <div>
-        <h3 className="text-lg font-semibold text-[var(--accent)] mb-3">About</h3>
-        <p className="text-gray-700 leading-relaxed">{restaurant.description}</p>
-      </div>
-
-      {/* Tags */}
-      <div>
-        <h3 className="text-lg font-semibold text-[var(--accent)] mb-3">Specialties & Features</h3>
+        <h3 className="text-lg font-semibold mb-3">Tags & Categories</h3>
         <div className="flex flex-wrap gap-2">
           {restaurant.tags.map((tag: string) => (
-            <span
-              key={tag}
-              className="bg-[var(--badge-green)]/10 text-[var(--badge-green)] px-3 py-1 rounded-full text-sm font-medium border border-[var(--badge-green)]/20"
-            >
+            <span key={tag} className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
               {tag}
             </span>
           ))}
         </div>
-      </div>
-
-      {/* Acciones */}
-      <div className="flex flex-wrap gap-3 pt-4">
-        <a 
-          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(restaurant.location)}`} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="flex items-center gap-2 bg-[var(--accent)] hover:bg-[var(--primary)] text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-all duration-200"
-        >
-          <MapPin className="w-4 h-4" />
-          Get Directions
-        </a>
-        <a 
-          href={`tel:${restaurant.phone}`} 
-          className="flex items-center gap-2 bg-[var(--badge-green)] hover:bg-[var(--button)] text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-all duration-200"
-        >
-          <Phone className="w-4 h-4" />
-          Call Now
-        </a>
-        <a 
-          href={restaurant.website} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="flex items-center gap-2 bg-[var(--button)] hover:bg-[var(--badge-green)] text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-all duration-200"
-        >
-          <Globe className="w-4 h-4" />
-          Visit Website
-        </a>
       </div>
     </div>
   );
 
   const renderMenuTab = () => (
     <div className="space-y-6">
-      <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold text-[var(--accent)] mb-2">Our Menu</h3>
-        <p className="text-gray-600">Discover our delicious offerings</p>
-      </div>
-      
-      {restaurant.menu.map((section: any) => (
-        <div key={section.title} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-          <h4 className="text-xl font-bold text-[var(--badge-green)] mb-4 border-b border-gray-100 pb-2">
-            {section.title}
-          </h4>
+      {restaurant.menu.map((section: any, sectionIndex: number) => (
+        <div key={sectionIndex} className="border-b border-gray-200 pb-6 last:border-b-0">
+          <h3 className="text-xl font-semibold mb-4 text-[var(--accent)]">{section.title}</h3>
           <div className="space-y-4">
-            {section.items.map((item: any) => (
-              <div key={item.name} className="flex justify-between items-start p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div className="flex-1">
-                  <h5 className="font-semibold text-gray-900 mb-1">{item.name}</h5>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+            {section.items.map((item: any, itemIndex: number) => (
+              <div key={itemIndex} className="bg-gray-50 rounded-lg p-4">
+                <div className="flex justify-between items-start mb-2">
+                  <h4 className="font-semibold text-gray-900">{item.name}</h4>
+                  <span className="text-[var(--accent)] font-bold">{item.price}</span>
                 </div>
-                <div className="ml-4">
-                  <span className="text-lg font-bold text-[var(--accent)]">{item.price}</span>
-                </div>
+                <p className="text-gray-600 text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -163,7 +154,7 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, isOpen, o
             <p className="text-gray-400">Be the first to share your experience!</p>
           </div>
         ) : (
-          restaurant.reviews.map((review: any, idx: number) => (
+          restaurant.reviews.map((review: string, idx: number) => (
             <div key={idx} className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-8 h-8 bg-[var(--accent)] rounded-full flex items-center justify-center">
@@ -221,11 +212,13 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, isOpen, o
     <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-2 sm:p-4">
       <div className="bg-white rounded-xl sm:rounded-3xl shadow-2xl max-w-4xl w-full max-h-[95vh] overflow-hidden relative">
         {/* Header con imagen */}
-        <div className="relative h-64">
-          <img 
-            src={restaurant.image} 
-            alt={restaurant.name} 
-            className="w-full h-full object-cover" 
+        <div className="relative w-full h-64 md:h-80 rounded-t-xl overflow-hidden">
+          <Image
+            src={restaurant.image}
+            alt={restaurant.name}
+            width={800}
+            height={400}
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <button 

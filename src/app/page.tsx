@@ -8,7 +8,35 @@ import RestaurantModal from "../../components/RestaurantModal";
 import Footer from "../../components/Footer";
 // import restaurantsData from "../../data/restaurants.json";
 
-const getUniqueCities = (data: any[]) => {
+interface Restaurant {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  location: string;
+  hours: string;
+  isOpen: boolean;
+  priceLevel: number;
+  rating: number;
+  tags: string[];
+  image: string;
+  distance: number;
+  website: string;
+  phone: string;
+  menu: Array<{
+    title: string;
+    items: Array<{
+      name: string;
+      description: string;
+      price: string;
+    }>;
+  }>;
+  reviews: string[];
+  verified: boolean;
+  createdAt: string;
+}
+
+const getUniqueCities = (data: Restaurant[]) => {
   const cities = data.map(r => {
     const match = r.location.match(/,\s*(.+)$/);
     return match ? match[1] : "";
@@ -19,7 +47,7 @@ const getUniqueCities = (data: any[]) => {
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [zoom, setZoom] = useState(false);
-  const [restaurantsData, setRestaurantsData] = useState<any[]>([]);
+  const [restaurantsData, setRestaurantsData] = useState<Restaurant[]>([]);
   const [dataLoading, setDataLoading] = useState(true);
   
   // Cargar restaurantes desde la API

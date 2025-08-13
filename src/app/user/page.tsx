@@ -97,12 +97,11 @@ export default function UserPage() {
       </button>
 
       <div className="text-center">
-        <p className="text-gray-600">
-          Don't have an account?{' '}
+        <p className="text-gray-600 text-sm">
+          Don&apos;t have an account?{' '}
           <button
-            type="button"
             onClick={() => setMode('signup')}
-            className="text-[var(--accent)] hover:text-[var(--primary)] font-semibold"
+            className="text-[var(--accent)] hover:underline font-medium"
           >
             Sign up
           </button>
@@ -237,12 +236,11 @@ export default function UserPage() {
       </button>
 
       <div className="text-center">
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-sm">
           Already have an account?{' '}
           <button
-            type="button"
             onClick={() => setMode('login')}
-            className="text-[var(--accent)] hover:text-[var(--primary)] font-semibold"
+            className="text-[var(--accent)] hover:underline font-medium"
           >
             Sign in
           </button>
