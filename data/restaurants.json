@@ -1,0 +1,1183 @@
+[
+  {
+    "id": "1",
+    "name": "Green Garden Bistro",
+    "category": "Mediterranean Vegan",
+    "description": "Completely vegan restaurant with local organic ingredients and gluten-free options.",
+    "location": "Calle Serrano 45, Madrid",
+    "hours": "10:00 - 22:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.8,
+    "tags": [
+      "Vegan",
+      "Gluten-Free",
+      "Nut-Free"
+    ],
+    "image": "https://www.greengardenresort.com/assets/themes/www.greengardenresort.com/img/gallery/gastronomia/es/green_garden_resort_albertomahtani_56.tmedium.jpg",
+    "distance": 12,
+    "website": "https://greengardenbistro.com",
+    "phone": "+34 600 000 000",
+    "menu": [
+      {
+        "title": "Main Dishes",
+        "items": [
+          {
+            "name": "Green Buddha Bowl",
+            "description": "Quinoa, avocado, spinach, hummus",
+            "price": "€14.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T22:42:47.942Z"
+  },
+  {
+    "id": "2",
+    "name": "Italiana Pasta Roma",
+    "category": "Italian",
+    "description": "Artisanal pasta with gluten-free and vegetarian options.",
+    "location": "Via Roma 12, Barcelona",
+    "hours": "12:00 - 23:00",
+    "isOpen": false,
+    "priceLevel": 1,
+    "rating": 4.5,
+    "tags": [
+      "Vegetarian",
+      "Gluten-Free",
+      "Dairy-Free"
+    ],
+    "image": "https://cdn.prod.website-files.com/62bd603f5fa03e2a53863a29/62ced8f8dfa1f904dd2307d9_62bae2a73bf032bbe51f78ee_PASTA-ROMA.jpeg",
+    "distance": 8,
+    "website": "https://italianapasta.com",
+    "phone": "+34 600 111 111",
+    "menu": [
+      {
+        "title": "Pasta Dishes",
+        "items": [
+          {
+            "name": "Gluten-Free Pasta",
+            "description": "Rice pasta with homemade tomato sauce",
+            "price": "€12.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T22:42:55.215Z"
+  },
+  {
+    "id": "3",
+    "name": "Keto Grill House",
+    "category": "Keto Grill",
+    "description": "Specialty in meats and low-carb dishes. Sugar-free and low-sodium options.",
+    "location": "Av. Libertad 99, Valencia",
+    "hours": "13:00 - 21:00",
+    "isOpen": true,
+    "priceLevel": 3,
+    "rating": 4.7,
+    "tags": [
+      "Keto",
+      "Sugar-Free",
+      "Low-Sodium"
+    ],
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=600&fit=crop",
+    "distance": 20,
+    "website": "https://ketogrillhouse.com",
+    "phone": "+34 600 222 222",
+    "menu": [
+      {
+        "title": "Meat Dishes",
+        "items": [
+          {
+            "name": "Keto Ribeye",
+            "description": "Grilled ribeye with herb butter",
+            "price": "€18.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T22:52:09.024Z"
+  },
+  {
+    "id": "4",
+    "name": "Ocean Blue Seafood",
+    "category": "Seafood",
+    "description": "Fresh seafood restaurant with gluten-free options and sustainable fishing practices.",
+    "location": "Harbor Street 123, Miami",
+    "hours": "11:00 - 23:00",
+    "isOpen": true,
+    "priceLevel": 3,
+    "rating": 4.6,
+    "tags": [
+      "Seafood",
+      "Gluten-Free",
+      "Sustainable"
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy-r-j4bbyzqgNaYMkO210saogwnB4KkIW2w&s",
+    "distance": 15,
+    "website": "https://oceanblueseafood.com",
+    "phone": "+1 305 555 0101",
+    "menu": [
+      {
+        "title": "Main Dishes",
+        "items": [
+          {
+            "name": "Grilled Salmon",
+            "description": "Fresh Atlantic salmon with lemon herb butter",
+            "price": "$28.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T22:51:59.903Z"
+  },
+  {
+    "id": "5",
+    "name": "Urban Vegan Kitchen",
+    "category": "Vegan",
+    "description": "Modern vegan cuisine with organic ingredients and creative plant-based dishes.",
+    "location": "Downtown Ave 456, Los Angeles",
+    "hours": "10:00 - 22:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.9,
+    "tags": [
+      "Vegan",
+      "Organic",
+      "Gluten-Free"
+    ],
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=600&fit=crop",
+    "distance": 5,
+    "website": "https://urbanvegankitchen.com",
+    "phone": "+1 323 555 0202",
+    "menu": [
+      {
+        "title": "Signature Bowls",
+        "items": [
+          {
+            "name": "Rainbow Buddha Bowl",
+            "description": "Quinoa, roasted vegetables, avocado, tahini dressing",
+            "price": "$16.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T22:52:19.291Z"
+  },
+  {
+    "id": "6",
+    "name": "Tuscany Trattoria",
+    "category": "Italian",
+    "description": "Authentic Italian cuisine with traditional recipes and gluten-free pasta options.",
+    "location": "Little Italy 789, New York",
+    "hours": "12:00 - 23:00",
+    "isOpen": false,
+    "priceLevel": 2,
+    "rating": 4.4,
+    "tags": [
+      "Italian",
+      "Gluten-Free",
+      "Traditional"
+    ],
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&h=600&fit=crop",
+    "distance": 10,
+    "website": "https://tuscanytrattoria.com",
+    "phone": "+1 212 555 0303",
+    "menu": [
+      {
+        "title": "Pasta Specialties",
+        "items": [
+          {
+            "name": "Gluten-Free Carbonara",
+            "description": "Rice pasta with eggs, cheese, and pancetta",
+            "price": "$18.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T22:52:23.486Z"
+  },
+  {
+    "id": "7",
+    "name": "Spice Garden Indian",
+    "category": "Indian",
+    "description": "Traditional Indian cuisine with vegetarian and vegan options, low-sodium dishes available.",
+    "location": "Curry Lane 321, Chicago",
+    "hours": "11:30 - 22:30",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.7,
+    "tags": [
+      "Indian",
+      "Vegetarian",
+      "Low-Sodium"
+    ],
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&h=600&fit=crop",
+    "distance": 18,
+    "website": "https://spicegardenindian.com",
+    "phone": "+1 312 555 0404",
+    "menu": [
+      {
+        "title": "Curry Dishes",
+        "items": [
+          {
+            "name": "Low-Sodium Chicken Tikka",
+            "description": "Grilled chicken in mild spices with basmati rice",
+            "price": "$14.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T22:55:42.006Z"
+  },
+  {
+    "id": "8",
+    "name": "Fresh Fields Market",
+    "category": "Farm-to-Table",
+    "description": "Farm-to-table restaurant featuring local organic produce and sustainable practices.",
+    "location": "Farm Road 654, Portland",
+    "hours": "8:00 - 21:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.8,
+    "tags": [
+      "Organic",
+      "Local",
+      "Sustainable"
+    ],
+    "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&h=600&fit=crop",
+    "distance": 7,
+    "website": "https://freshfieldmarket.com",
+    "phone": "+1 503 555 0505",
+    "menu": [
+      {
+        "title": "Seasonal Plates",
+        "items": [
+          {
+            "name": "Local Harvest Plate",
+            "description": "Seasonal vegetables, free-range chicken, herb sauce",
+            "price": "$22.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:00:50.912Z"
+  },
+  {
+    "id": "9",
+    "name": "Zen Sushi Bar",
+    "category": "Japanese",
+    "description": "Authentic Japanese sushi with gluten-free soy sauce and vegetarian options.",
+    "location": "Sakura Street 987, San Francisco",
+    "hours": "11:00 - 23:00",
+    "isOpen": true,
+    "priceLevel": 3,
+    "rating": 4.6,
+    "tags": [
+      "Japanese",
+      "Gluten-Free",
+      "Vegetarian"
+    ],
+    "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&h=600&fit=crop",
+    "distance": 12,
+    "website": "https://zensushibar.com",
+    "phone": "+1 415 555 0606",
+    "menu": [
+      {
+        "title": "Sushi Rolls",
+        "items": [
+          {
+            "name": "Vegetarian Dragon Roll",
+            "description": "Avocado, cucumber, tempura sweet potato",
+            "price": "$16.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:00:54.734Z"
+  },
+  {
+    "id": "10",
+    "name": "Mediterranean Breeze",
+    "category": "Mediterranean",
+    "description": "Fresh Mediterranean cuisine with heart-healthy options and olive oil-based cooking.",
+    "location": "Coastal Drive 147, San Diego",
+    "hours": "11:30 - 22:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.5,
+    "tags": [
+      "Mediterranean",
+      "Heart-Healthy",
+      "Olive Oil"
+    ],
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&h=600&fit=crop",
+    "distance": 9,
+    "website": "https://mediterraneanbreeze.com",
+    "phone": "+1 619 555 0707",
+    "menu": [
+      {
+        "title": "Mediterranean Specialties",
+        "items": [
+          {
+            "name": "Grilled Sea Bass",
+            "description": "Fresh sea bass with herbs, lemon, and olive oil",
+            "price": "$26.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:00:57.204Z"
+  },
+  {
+    "id": "11",
+    "name": "Keto Corner Cafe",
+    "category": "Keto",
+    "description": "Specialized keto restaurant with low-carb, high-fat meals and sugar-free desserts.",
+    "location": "Keto Lane 258, Austin",
+    "hours": "7:00 - 20:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.7,
+    "tags": [
+      "Keto",
+      "Low-Carb",
+      "Sugar-Free"
+    ],
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=600&fit=crop",
+    "distance": 14,
+    "website": "https://ketocornercafe.com",
+    "phone": "+1 512 555 0808",
+    "menu": [
+      {
+        "title": "Keto Favorites",
+        "items": [
+          {
+            "name": "Bacon-Wrapped Chicken",
+            "description": "Chicken breast wrapped in bacon with cauliflower mash",
+            "price": "$19.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:03.344Z"
+  },
+  {
+    "id": "12",
+    "name": "Green Leaf Salad Bar",
+    "category": "Healthy",
+    "description": "Fresh salad bar with organic ingredients and customizable healthy bowls.",
+    "location": "Health Street 369, Denver",
+    "hours": "10:00 - 21:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.3,
+    "tags": [
+      "Healthy",
+      "Organic",
+      "Customizable"
+    ],
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=600&fit=crop",
+    "distance": 6,
+    "website": "https://greenleafsaladbar.com",
+    "phone": "+1 303 555 0909",
+    "menu": [
+      {
+        "title": "Build Your Bowl",
+        "items": [
+          {
+            "name": "Superfood Bowl",
+            "description": "Kale, quinoa, berries, nuts, and vinaigrette",
+            "price": "$12.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:06.509Z"
+  },
+  {
+    "id": "13",
+    "name": "Pho Noodle House",
+    "category": "Vietnamese",
+    "description": "Authentic Vietnamese pho with gluten-free rice noodles and vegetarian broth options.",
+    "location": "Pho Avenue 741, Seattle",
+    "hours": "11:00 - 22:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.6,
+    "tags": [
+      "Vietnamese",
+      "Gluten-Free",
+      "Vegetarian"
+    ],
+    "image": "https://static01.nyt.com/images/2025/04/17/multimedia/hm-hoisin-garlic-noodles-cblh/hm-hoisin-garlic-noodles-cblh-jumbo.jpg",
+    "distance": 11,
+    "website": "https://phonoodlehouse.com",
+    "phone": "+1 206 555 1010",
+    "menu": [
+      {
+        "title": "Pho Specialties",
+        "items": [
+          {
+            "name": "Vegetarian Pho",
+            "description": "Rice noodles in vegetable broth with tofu and herbs",
+            "price": "$11.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:09.557Z"
+  },
+  {
+    "id": "14",
+    "name": "Artisan Bread Co.",
+    "category": "Bakery",
+    "description": "Artisan bakery with gluten-free bread options and organic ingredients.",
+    "location": "Bread Street 852, Boston",
+    "hours": "6:00 - 19:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.4,
+    "tags": [
+      "Bakery",
+      "Gluten-Free",
+      "Organic"
+    ],
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&h=600&fit=crop",
+    "distance": 8,
+    "website": "https://artisanbreadco.com",
+    "phone": "+1 617 555 1111",
+    "menu": [
+      {
+        "title": "Fresh Breads",
+        "items": [
+          {
+            "name": "Gluten-Free Sourdough",
+            "description": "Traditional sourdough made with gluten-free flour",
+            "price": "$8.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:12.598Z"
+  },
+  {
+    "id": "15",
+    "name": "Taco Libre",
+    "category": "Mexican",
+    "description": "Fresh Mexican tacos with corn tortillas and vegetarian options, low-sodium seasonings.",
+    "location": "Taco Lane 963, Phoenix",
+    "hours": "11:00 - 23:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.5,
+    "tags": [
+      "Mexican",
+      "Vegetarian",
+      "Low-Sodium"
+    ],
+    "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&h=600&fit=crop",
+    "distance": 13,
+    "website": "https://tacolibre.com",
+    "phone": "+1 602 555 1212",
+    "menu": [
+      {
+        "title": "Taco Selection",
+        "items": [
+          {
+            "name": "Vegetarian Street Tacos",
+            "description": "Corn tortillas with grilled vegetables and salsa",
+            "price": "$9.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:14.975Z"
+  },
+  {
+    "id": "16",
+    "name": "Fresh Catch Grill",
+    "category": "Seafood",
+    "description": "Fresh seafood grill with sustainable fishing and gluten-free options.",
+    "location": "Catch Road 159, Tampa",
+    "hours": "12:00 - 22:00",
+    "isOpen": true,
+    "priceLevel": 3,
+    "rating": 4.7,
+    "tags": [
+      "Seafood",
+      "Sustainable",
+      "Gluten-Free"
+    ],
+    "image": "https://www.kikkoman.fr/fileadmin/_processed_/a/2/csm_Blog_onFIre-BBQ_Header_Desktop_046d278675.webp",
+    "distance": 16,
+    "website": "https://freshcatchgrill.com",
+    "phone": "+1 813 555 1313",
+    "menu": [
+      {
+        "title": "Grilled Seafood",
+        "items": [
+          {
+            "name": "Grilled Mahi Mahi",
+            "description": "Fresh mahi mahi with tropical salsa and rice",
+            "price": "$24.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:17.817Z"
+  },
+  {
+    "id": "17",
+    "name": "Vegan Delight",
+    "category": "Vegan",
+    "description": "Creative vegan cuisine with plant-based proteins and organic ingredients.",
+    "location": "Vegan Way 753, Portland",
+    "hours": "10:00 - 21:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.8,
+    "tags": [
+      "Vegan",
+      "Plant-Based",
+      "Organic"
+    ],
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=600&fit=crop",
+    "distance": 4,
+    "website": "https://vegandelight.com",
+    "phone": "+1 503 555 1414",
+    "menu": [
+      {
+        "title": "Plant-Based Entrees",
+        "items": [
+          {
+            "name": "Mushroom Wellington",
+            "description": "Portobello mushrooms with puff pastry and herbs",
+            "price": "$18.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:20.124Z"
+  },
+  {
+    "id": "18",
+    "name": "Pizza Palace",
+    "category": "Pizza",
+    "description": "Artisan pizza with gluten-free crust options and fresh local ingredients.",
+    "location": "Pizza Street 486, Las Vegas",
+    "hours": "11:00 - 23:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.4,
+    "tags": [
+      "Pizza",
+      "Gluten-Free",
+      "Artisan"
+    ],
+    "image": "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/48a49653c8716457eb0b2f7eb3c7d74c/Derivates/8d83d9ed4567fa15456d8eec7557e60006a15576.jpg",
+    "distance": 10,
+    "website": "https://pizzapalace.com",
+    "phone": "+1 702 555 1515",
+    "menu": [
+      {
+        "title": "Artisan Pizzas",
+        "items": [
+          {
+            "name": "Gluten-Free Margherita",
+            "description": "Fresh mozzarella, basil, and tomato sauce",
+            "price": "$16.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:22.905Z"
+  },
+  {
+    "id": "19",
+    "name": "Thai Spice Garden",
+    "category": "Thai",
+    "description": "Authentic Thai cuisine with gluten-free options and vegetarian dishes.",
+    "location": "Thai Lane 357, Orlando",
+    "hours": "11:30 - 22:30",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.6,
+    "tags": [
+      "Thai",
+      "Gluten-Free",
+      "Vegetarian"
+    ],
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&h=600&fit=crop",
+    "distance": 12,
+    "website": "https://thaispicegarden.com",
+    "phone": "+1 407 555 1616",
+    "menu": [
+      {
+        "title": "Thai Curries",
+        "items": [
+          {
+            "name": "Green Curry (Vegetarian)",
+            "description": "Coconut milk curry with vegetables and tofu",
+            "price": "$15.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:26.409Z"
+  },
+  {
+    "id": "20",
+    "name": "Burger Barn",
+    "category": "American",
+    "description": "Gourmet burgers with gluten-free buns and vegetarian patty options.",
+    "location": "Burger Blvd 951, Nashville",
+    "hours": "11:00 - 22:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.3,
+    "tags": [
+      "American",
+      "Gluten-Free",
+      "Vegetarian"
+    ],
+    "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&h=600&fit=crop",
+    "distance": 7,
+    "website": "https://burgerbarn.com",
+    "phone": "+1 615 555 1717",
+    "menu": [
+      {
+        "title": "Gourmet Burgers",
+        "items": [
+          {
+            "name": "Veggie Burger",
+            "description": "Plant-based patty with gluten-free bun and fries",
+            "price": "$13.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:29.445Z"
+  },
+  {
+    "id": "21",
+    "name": "Smoothie Paradise",
+    "category": "Smoothies",
+    "description": "Fresh smoothies and bowls with organic fruits and protein options.",
+    "location": "Smoothie Street 264, San Jose",
+    "hours": "7:00 - 20:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.5,
+    "tags": [
+      "Smoothies",
+      "Organic",
+      "Protein"
+    ],
+    "image": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=800&h=600&fit=crop",
+    "distance": 9,
+    "website": "https://smoothieparadise.com",
+    "phone": "+1 408 555 1818",
+    "menu": [
+      {
+        "title": "Smoothie Bowls",
+        "items": [
+          {
+            "name": "Acai Protein Bowl",
+            "description": "Acai berries, granola, banana, and protein powder",
+            "price": "$11.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:31.834Z"
+  },
+  {
+    "id": "22",
+    "name": "Greek Islands",
+    "category": "Greek",
+    "description": "Traditional Greek cuisine with olive oil-based cooking and vegetarian options.",
+    "location": "Greek Way 753, Miami",
+    "hours": "11:00 - 23:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.7,
+    "tags": [
+      "Greek",
+      "Olive Oil",
+      "Vegetarian"
+    ],
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&h=600&fit=crop",
+    "distance": 14,
+    "website": "https://greekislands.com",
+    "phone": "+1 305 555 1919",
+    "menu": [
+      {
+        "title": "Greek Specialties",
+        "items": [
+          {
+            "name": "Vegetarian Moussaka",
+            "description": "Layers of eggplant, potatoes, and béchamel sauce",
+            "price": "$17.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:34.754Z"
+  },
+  {
+    "id": "23",
+    "name": "Coffee Corner",
+    "category": "Cafe",
+    "description": "Artisan coffee shop with gluten-free pastries and organic coffee beans.",
+    "location": "Coffee Lane 468, Austin",
+    "hours": "6:00 - 18:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.4,
+    "tags": [
+      "Cafe",
+      "Gluten-Free",
+      "Organic"
+    ],
+    "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&h=600&fit=crop",
+    "distance": 5,
+    "website": "https://coffeecorner.com",
+    "phone": "+1 512 555 2020",
+    "menu": [
+      {
+        "title": "Coffee & Pastries",
+        "items": [
+          {
+            "name": "Gluten-Free Blueberry Muffin",
+            "description": "Fresh baked muffin with organic blueberries",
+            "price": "$4.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:38.339Z"
+  },
+  {
+    "id": "24",
+    "name": "BBQ Smokehouse",
+    "category": "BBQ",
+    "description": "Traditional BBQ with low-sodium options and gluten-free sides.",
+    "location": "Smoke Road 159, Dallas",
+    "hours": "11:00 - 22:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.6,
+    "tags": [
+      "BBQ",
+      "Low-Sodium",
+      "Gluten-Free"
+    ],
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=600&fit=crop",
+    "distance": 11,
+    "website": "https://bbqsmokehouse.com",
+    "phone": "+1 214 555 2121",
+    "menu": [
+      {
+        "title": "BBQ Plates",
+        "items": [
+          {
+            "name": "Low-Sodium Brisket Plate",
+            "description": "Smoked brisket with gluten-free cornbread",
+            "price": "$20.00"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:41.976Z"
+  },
+  {
+    "id": "25",
+    "name": "Fresh Market Deli",
+    "category": "Deli",
+    "description": "Fresh deli sandwiches with gluten-free bread and organic ingredients.",
+    "location": "Market Street 753, Philadelphia",
+    "hours": "8:00 - 19:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.3,
+    "tags": [
+      "Deli",
+      "Gluten-Free",
+      "Organic"
+    ],
+    "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&h=600&fit=crop",
+    "distance": 8,
+    "website": "https://freshmarketdeli.com",
+    "phone": "+1 215 555 2222",
+    "menu": [
+      {
+        "title": "Sandwich Selection",
+        "items": [
+          {
+            "name": "Turkey Club (Gluten-Free)",
+            "description": "Turkey, bacon, lettuce, tomato on gluten-free bread",
+            "price": "$10.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:44.776Z"
+  },
+  {
+    "id": "26",
+    "name": "Sushi Express",
+    "category": "Japanese",
+    "description": "Quick sushi with gluten-free soy sauce and vegetarian rolls.",
+    "location": "Express Lane 951, San Diego",
+    "hours": "11:00 - 21:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.4,
+    "tags": [
+      "Japanese",
+      "Gluten-Free",
+      "Vegetarian"
+    ],
+    "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&h=600&fit=crop",
+    "distance": 6,
+    "website": "https://sushiexpress.com",
+    "phone": "+1 619 555 2323",
+    "menu": [
+      {
+        "title": "Sushi Rolls",
+        "items": [
+          {
+            "name": "California Roll (Vegetarian)",
+            "description": "Cucumber, avocado, and rice with gluten-free soy sauce",
+            "price": "$8.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:01:47.682Z"
+  },
+  {
+    "id": "27",
+    "name": "Pasta House",
+    "category": "Italian",
+    "description": "Homemade pasta with gluten-free options and traditional Italian sauces.",
+    "location": "Pasta Lane 357, Chicago",
+    "hours": "12:00 - 22:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.5,
+    "tags": [
+      "Italian",
+      "Gluten-Free",
+      "Homemade"
+    ],
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&h=600&fit=crop",
+    "distance": 12,
+    "website": "https://pastahouse.com",
+    "phone": "+1 312 555 2424",
+    "menu": [
+      {
+        "title": "Pasta Dishes",
+        "items": [
+          {
+            "name": "Gluten-Free Fettuccine Alfredo",
+            "description": "Rice pasta with creamy Alfredo sauce",
+            "price": "$16.50"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:20:46.222Z"
+  },
+  {
+    "id": "28",
+    "name": "Taco Fiesta",
+    "category": "Mexican",
+    "description": "Authentic Mexican tacos with corn tortillas and fresh ingredients.",
+    "location": "Fiesta Street 753, Houston",
+    "hours": "11:00 - 23:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.6,
+    "tags": [
+      "Mexican",
+      "Corn Tortillas",
+      "Fresh"
+    ],
+    "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&h=600&fit=crop",
+    "distance": 9,
+    "website": "https://tacofiesta.com",
+    "phone": "+1 713 555 2525",
+    "menu": [
+      {
+        "title": "Taco Selection",
+        "items": [
+          {
+            "name": "Street Tacos",
+            "description": "Three corn tortillas with choice of meat and salsa",
+            "price": "$9.50"
+          }
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "29",
+    "name": "Salad Station",
+    "category": "Healthy",
+    "description": "Build-your-own salad bar with fresh ingredients and healthy dressings.",
+    "location": "Salad Street 159, Denver",
+    "hours": "10:00 - 20:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.3,
+    "tags": [
+      "Healthy",
+      "Build-Your-Own",
+      "Fresh"
+    ],
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=600&fit=crop",
+    "distance": 7,
+    "website": "https://saladstation.com",
+    "phone": "+1 303 555 2626",
+    "menu": [
+      {
+        "title": "Salad Bowls",
+        "items": [
+          {
+            "name": "Build Your Own Salad",
+            "description": "Choose from fresh greens, vegetables, and proteins",
+            "price": "$11.00"
+          }
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "30",
+    "name": "Ice Cream Dream",
+    "category": "Dessert",
+    "description": "Artisan ice cream with dairy-free options and organic ingredients.",
+    "location": "Dream Lane 468, Portland",
+    "hours": "12:00 - 22:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.7,
+    "tags": [
+      "Dessert",
+      "Dairy-Free",
+      "Organic"
+    ],
+    "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&h=600&fit=crop",
+    "distance": 5,
+    "website": "https://icecreamdream.com",
+    "phone": "+1 503 555 2727",
+    "menu": [
+      {
+        "title": "Ice Cream Flavors",
+        "items": [
+          {
+            "name": "Dairy-Free Chocolate",
+            "description": "Coconut milk chocolate ice cream with organic cocoa",
+            "price": "$5.50"
+          }
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "31",
+    "name": "Wok & Roll",
+    "category": "Chinese",
+    "description": "Fresh Chinese stir-fry with gluten-free soy sauce and vegetarian options.",
+    "location": "Wok Street 753, Seattle",
+    "hours": "11:00 - 22:00",
+    "isOpen": true,
+    "priceLevel": 2,
+    "rating": 4.4,
+    "tags": [
+      "Chinese",
+      "Gluten-Free",
+      "Vegetarian"
+    ],
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&h=600&fit=crop",
+    "distance": 10,
+    "website": "https://wokandroll.com",
+    "phone": "+1 206 555 2828",
+    "menu": [
+      {
+        "title": "Stir-Fry Dishes",
+        "items": [
+          {
+            "name": "Vegetarian Stir-Fry",
+            "description": "Mixed vegetables with tofu and gluten-free soy sauce",
+            "price": "$13.50"
+          }
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "32",
+    "name": "Burrito Bowl",
+    "category": "Mexican",
+    "description": "Fresh Mexican bowls with rice, beans, and choice of protein or vegetables.",
+    "location": "Bowl Street 951, Los Angeles",
+    "hours": "11:00 - 21:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.5,
+    "tags": [
+      "Mexican",
+      "Fresh",
+      "Customizable"
+    ],
+    "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&h=600&fit=crop",
+    "distance": 8,
+    "website": "https://burritobowl.com",
+    "phone": "+1 323 555 2929",
+    "menu": [
+      {
+        "title": "Bowl Selection",
+        "items": [
+          {
+            "name": "Veggie Bowl",
+            "description": "Rice, beans, grilled vegetables, and salsa",
+            "price": "$10.50"
+          }
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "33",
+    "name": "Soup & Sandwich",
+    "category": "American",
+    "description": "Homemade soups and sandwiches with gluten-free bread options.",
+    "location": "Soup Lane 357, Boston",
+    "hours": "10:00 - 20:00",
+    "isOpen": true,
+    "priceLevel": 1,
+    "rating": 4.3,
+    "tags": [
+      "American",
+      "Gluten-Free",
+      "Homemade"
+    ],
+    "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&h=600&fit=crop",
+    "distance": 6,
+    "website": "https://soupandsandwich.com",
+    "phone": "+1 617 555 3030",
+    "menu": [
+      {
+        "title": "Soup & Sandwich Combos",
+        "items": [
+          {
+            "name": "Tomato Soup & Grilled Cheese",
+            "description": "Homemade tomato soup with gluten-free grilled cheese",
+            "price": "$12.00"
+          }
+        ]
+      }
+    ],
+    "reviews": []
+  },
+  {
+    "id": "34",
+    "name": "Tavisita Restaurant",
+    "category": "Japanese",
+    "description": "The best restaurant of Japanese food with vegan options, halal, keto and gluten-free",
+    "location": "Huascar 416, New York",
+    "hours": "10:00 - 18:00",
+    "isOpen": false,
+    "priceLevel": "2",
+    "rating": "4.9",
+    "tags": [
+      "Vegan",
+      "Halal",
+      "Seafood Allergy",
+      "Sugar-Free",
+      "Gluten-Free",
+      "Mediterranean"
+    ],
+    "image": "https://sapanomad.com/wp-content/uploads/Halal-Restaurant-in-Sapa.jpg",
+    "distance": "23",
+    "website": "https://tavisita.com/",
+    "phone": "0975467484",
+    "menu": [
+      {
+        "title": "Main Dishes",
+        "items": [
+          {
+            "name": "Hand Roll",
+            "description": "Vegan and Halal roll",
+            "price": "12"
+          }
+        ]
+      }
+    ],
+    "reviews": [],
+    "verified": true,
+    "createdAt": "2025-08-13T23:04:22.370Z"
+  }
+]
