@@ -8,6 +8,9 @@ const GITHUB_PATH = 'data/restaurants.json';
 
 // Función para obtener el contenido actual del archivo
 async function getCurrentFile() {
+  console.log('🔍 Debug: Token length:', GITHUB_TOKEN ? GITHUB_TOKEN.length : 0);
+  console.log('🔍 Debug: Token starts with:', GITHUB_TOKEN ? GITHUB_TOKEN.substring(0, 10) + '...' : 'undefined');
+  
   const response = await fetch(
     `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_PATH}`,
     {
@@ -19,6 +22,8 @@ async function getCurrentFile() {
   );
 
   if (!response.ok) {
+    console.log('🔍 Debug: GitHub API response status:', response.status);
+    console.log('🔍 Debug: GitHub API response text:', await response.text());
     throw new Error(`Error al obtener el archivo: ${response.status}`);
   }
 
@@ -121,6 +126,10 @@ export async function POST(request: NextRequest) {
 
 export async function PUT(request: NextRequest) {
   try {
+    console.log('🔍 Debug PUT: Token from env:', process.env.GITHUB_TOKEN ? 'present' : 'missing');
+    console.log('🔍 Debug PUT: Token length:', process.env.GITHUB_TOKEN ? process.env.GITHUB_TOKEN.length : 0);
+    console.log('🔍 Debug PUT: GITHUB_TOKEN constant:', GITHUB_TOKEN ? 'present' : 'missing');
+    
     if (!GITHUB_TOKEN) {
       return NextResponse.json(
         { error: 'GitHub token no configurado. Configura la variable de entorno GITHUB_TOKEN.' },
@@ -130,6 +139,8 @@ export async function PUT(request: NextRequest) {
 
     const body = await request.json();
     const { id, ...updateData } = body;
+    
+    console.log('🔍 Debug PUT: Updating restaurant with ID:', id);
     
     // Obtener el archivo actual
     const currentFile = await getCurrentFile();
@@ -169,6 +180,7 @@ export async function PUT(request: NextRequest) {
       data: currentData[restaurantIndex] 
     });
   } catch (error) {
+    console.log('🔍 Debug PUT: Error caught:', error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Error desconocido' },
       { status: 500 }
