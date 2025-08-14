@@ -42,17 +42,22 @@ export default function AdminPage() {
 
   const fetchRestaurants = async () => {
     try {
-      const response = await fetch('/api/restaurants');
-      const data = await response.json();
-      // Asegurar que todos los restaurantes tengan las propiedades requeridas
-      const processedData = data.map((restaurant: Restaurant) => ({
-        ...restaurant,
-        verified: restaurant.verified ?? false,
-        createdAt: restaurant.createdAt ?? new Date().toISOString()
-      }));
-      setRestaurants(processedData);
+      setLoading(true);
+      const response = await fetch('/api/restaurants-online');
+      if (response.ok) {
+        const data = await response.json();
+        // Asegurar que todos los restaurantes tengan los campos requeridos
+        const processedData = data.map((restaurant: any) => ({
+          ...restaurant,
+          verified: restaurant.verified ?? false,
+          createdAt: restaurant.createdAt ?? new Date().toISOString(),
+        }));
+        setRestaurants(processedData);
+      } else {
+        console.error('Error fetching restaurants');
+      }
     } catch (error) {
-      console.error('Error fetching restaurants:', error);
+      console.error('Error:', error);
     } finally {
       setLoading(false);
     }
@@ -71,7 +76,7 @@ export default function AdminPage() {
     if (!editingRestaurant) return;
 
     try {
-      const response = await fetch(`/api/restaurants/${editingRestaurant.id}`, {
+      const response = await fetch(`/api/restaurants-online`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -79,13 +84,20 @@ export default function AdminPage() {
         body: JSON.stringify(editingRestaurant),
       });
 
-      if (response.ok) {
-        await fetchRestaurants();
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        // Actualizar la lista local
+        setRestaurants(prev => 
+          prev.map(r => r.id === editingRestaurant.id ? editingRestaurant : r)
+        );
         setEditingId(null);
         setEditingRestaurant(null);
+      } else {
+        console.error('Error updating restaurant:', result.error);
       }
     } catch (error) {
-      console.error('Error updating restaurant:', error);
+      console.error('Error:', error);
     }
   };
 

@@ -93,28 +93,37 @@ export default function VerificaRestaurant() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
+    setSuccess('');
 
     try {
       // Validación básica
       if (!form.name || !form.category || !form.location) {
-        setError('Please complete all required fields: Name, Category, and Location.');
+        setError('Por favor completa todos los campos requeridos.');
         return;
       }
 
-      // Filtrar menú vacío
-      const filteredMenu = menu
-        .filter(section => section.title.trim() && section.items.some(item => item.name.trim()))
-        .map(section => ({
-          ...section,
-          items: section.items.filter(item => item.name.trim())
-        }));
+      // Filtrar secciones de menú vacías
+      const filteredMenu = menu.filter(section => 
+        section.title.trim() && section.items.some(item => item.name.trim())
+      );
 
+      // Preparar datos del restaurante
       const restaurantData = {
         ...form,
-        menu: filteredMenu
+        menu: filteredMenu,
+        image: form.image || '/images/logo.png',
+        rating: parseFloat(form.rating.toString()) || 0,
+        priceLevel: parseInt(form.priceLevel.toString(), 10) || 1,
+        distance: parseFloat(form.distance.toString()) || 0,
+        tags: form.tags.filter(tag => tag !== ''),
+        website: form.website || '',
+        phone: form.phone || '',
+        hours: form.hours || '',
+        isOpen: form.isOpen,
       };
 
-      const response = await fetch('/api/restaurants', {
+      const response = await fetch('/api/restaurants-online', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -124,14 +133,15 @@ export default function VerificaRestaurant() {
 
       const result = await response.json();
 
-      if (response.ok) {
-        setSuccess('Restaurant added successfully! It will appear in the main list shortly.');
+      if (response.ok && result.success) {
+        setSuccess('¡Restaurante enviado exitosamente! Será revisado pronto.');
         resetForm();
       } else {
-        setError(result.error || 'Failed to add restaurant. Please try again.');
+        setError(result.error || 'Error al enviar el restaurante. Intenta nuevamente.');
       }
     } catch (error) {
-      setError('Network error. Please check your connection and try again.');
+      setError('Error de conexión. Intenta nuevamente.');
+      console.error('Error:', error);
     } finally {
       setIsSubmitting(false);
     }

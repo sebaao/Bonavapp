@@ -55,18 +55,20 @@ export default function Home() {
     const fetchRestaurants = async () => {
       try {
         setDataLoading(true);
-        const response = await fetch('/api/restaurants');
-        const data = await response.json();
-        console.log('Restaurants loaded:', data.length);
-        console.log('Verified restaurants:', data.filter((r: any) => r.verified).length);
-        setRestaurantsData(data);
+        const response = await fetch('/api/restaurants-online');
+        if (response.ok) {
+          const data = await response.json();
+          setRestaurantsData(data);
+        } else {
+          console.error('Error fetching restaurants');
+        }
       } catch (error) {
-        console.error('Error fetching restaurants:', error);
+        console.error('Error:', error);
       } finally {
         setDataLoading(false);
       }
     };
-    
+
     fetchRestaurants();
   }, []);
 
