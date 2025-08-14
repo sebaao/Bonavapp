@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+  const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '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';
   
   if (!GITHUB_TOKEN) {
     return NextResponse.json({

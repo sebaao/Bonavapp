@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // Configuración de GitHub
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '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';
 const GITHUB_OWNER = 'sebaao';
 const GITHUB_REPO = 'Bonavapp';
 const GITHUB_PATH = 'data/restaurants.json';
