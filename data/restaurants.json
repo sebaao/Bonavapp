@@ -1192,9 +1192,9 @@
     "createdAt": "2025-08-13T23:04:22.370Z"
   },
   {
-    "name": "Test Restaurant API",
+    "name": "La Posada de Seba",
     "category": "Test Category",
-    "location": "Test City",
+    "location": "New York",
     "rating": 4.8,
     "price": "$$",
     "description": "Restaurante de prueba para verificar la API",
