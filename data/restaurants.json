@@ -1229,5 +1229,28 @@
     "id": "1755133138147",
     "verified": false,
     "createdAt": "2025-08-14T00:58:58.147Z"
+  },
+  {
+    "id": "1755133138148",
+    "name": "Test Restaurant New Token",
+    "category": "Test Category",
+    "description": "Restaurante de prueba con nuevo token",
+    "location": "Test City",
+    "rating": 4.5,
+    "priceLevel": 2,
+    "distance": 2.5,
+    "tags": [
+      "test",
+      "new-token"
+    ],
+    "image": "/images/logo.png",
+    "menu": [],
+    "reviews": [],
+    "website": "https://test-restaurant.com",
+    "phone": "+1234567890",
+    "hours": "Mon-Fri: 9AM-10PM",
+    "isOpen": true,
+    "verified": false,
+    "createdAt": "2025-08-14T10:39:19.047Z"
   }
 ]
