@@ -975,7 +975,8 @@
         ]
       }
     ],
-    "reviews": []
+    "reviews": [],
+    "verified": true
   },
   {
     "id": "29",
@@ -1187,7 +1188,7 @@
       }
     ],
     "reviews": [],
-    "verified": true,
+    "verified": false,
     "createdAt": "2025-08-13T23:04:22.370Z"
   }
 ]
