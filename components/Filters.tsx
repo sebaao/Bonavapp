@@ -92,7 +92,7 @@ const Filters: React.FC<FiltersProps> = ({
             <input
               type="text"
               placeholder="Search by name or description..."
-              className="w-full px-4 py-2 border border-[var(--secondary)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent)] bg-[var(--background)] text-[var(--foreground)] placeholder:text-gray-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--accent)] bg-white text-gray-800 placeholder:text-gray-400"
               value={search}
               onChange={e => onSearchChange(e.target.value)}
             />
@@ -116,7 +116,7 @@ const Filters: React.FC<FiltersProps> = ({
         {isSectionOpen("city") && (
           <div className="mt-3">
             <select
-              className="w-full bg-[var(--background)] px-3 py-2 rounded-lg border border-[var(--secondary)] text-[var(--accent)] font-medium outline-none"
+              className="w-full bg-white px-3 py-2 rounded-lg border border-gray-300 text-gray-800 font-medium outline-none"
               value={selectedCity}
               onChange={e => onCityChange(e.target.value)}
             >
@@ -183,7 +183,7 @@ const Filters: React.FC<FiltersProps> = ({
                     onChange={() => onDietChange(diet.value)}
                     className="accent-[#2ECC71] rounded"
                   />
-                  <span className="text-[var(--foreground)]">{diet.label}</span>
+                  <span className="text-gray-800">{diet.label}</span>
                 </label>
               ))}
             </div>
@@ -215,7 +215,7 @@ const Filters: React.FC<FiltersProps> = ({
                     onChange={() => onRestrictionChange(restriction.value)}
                     className="accent-[#714DBF] rounded"
                   />
-                  <span className="text-[var(--foreground)]">{restriction.label}</span>
+                  <span className="text-gray-800">{restriction.label}</span>
                 </label>
               ))}
             </div>
@@ -247,7 +247,7 @@ const Filters: React.FC<FiltersProps> = ({
                     onChange={() => onReligiousChange(religious.value)}
                     className="accent-[#50E3C2] rounded"
                   />
-                  <span className="text-[var(--foreground)]">{religious.label}</span>
+                  <span className="text-gray-800">{religious.label}</span>
                 </label>
               ))}
             </div>

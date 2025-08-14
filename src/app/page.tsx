@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
+import { Users, Star, CheckCircle, TrendingUp } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import Filters from "../../components/Filters";
 import RestaurantCard from "../../components/RestaurantCard";
@@ -47,6 +48,7 @@ const getUniqueCities = (data: Restaurant[]) => {
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [zoom, setZoom] = useState(false);
+  const [splashVisible, setSplashVisible] = useState(true);
   const [restaurantsData, setRestaurantsData] = useState<Restaurant[]>([]);
   const [dataLoading, setDataLoading] = useState(true);
   
@@ -74,7 +76,11 @@ export default function Home() {
 
   useEffect(() => {
     setZoom(true);
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => {
+      setLoading(false);
+      // Pequeño delay para que la transición sea más suave
+      setTimeout(() => setSplashVisible(false), 500);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -139,14 +145,17 @@ export default function Home() {
     setReviews(prev => ({ ...prev, [id]: [...(prev[id] || []), review] }));
   };
 
-  const modalRestaurant = modalId ? {
-    ...filteredRestaurants.find(r => r.id === modalId),
-    reviews: reviews[modalId] || []
-  } : null;
+  const modalRestaurant = modalId ? (() => {
+    const found = filteredRestaurants.find(r => r.id === modalId);
+    return found ? {
+      ...found,
+      reviews: reviews[modalId] || found.reviews || []
+    } : null;
+  })() : null;
 
-  if (loading) {
+  if (splashVisible) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-green-600 z-50">
+      <div className={`fixed inset-0 flex items-center justify-center bg-green-600 z-50 transition-all duration-1000 ease-in-out ${loading ? 'opacity-100' : 'opacity-0'}`}>
         <div className={`transition-all duration-1000 ease-in-out ${zoom ? 'opacity-100 scale-125' : 'opacity-0 scale-75'}`}>
           <div className=" ">
             <Image
@@ -174,7 +183,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[var(--background)]">
+    <div className={`min-h-screen bg-[var(--background)] transition-all duration-1000 ease-in-out ${!splashVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
       <Navbar
         restaurantCount={verifiedRestaurants}
         totalRestaurants={totalRestaurants}
@@ -185,7 +194,155 @@ export default function Home() {
         onCityChange={setSelectedCity}
       />
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
+                 {/* Stats Cards */}
+         <div className="mb-8">
+           {/* Desktop Grid */}
+           <div className="hidden md:grid md:grid-cols-4 gap-4">
+             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+               <div className="flex items-center justify-between">
+                 <div>
+                   <p className="text-sm font-medium text-gray-600">Verified Restaurants</p>
+                   <p className="text-2xl font-bold text-gray-900">{verifiedRestaurants}</p>
+                 </div>
+                 <div className="p-3 bg-green-100 rounded-lg">
+                   <CheckCircle className="w-6 h-6 text-green-600" />
+                 </div>
+               </div>
+             </div>
+
+             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+               <div className="flex items-center justify-between">
+                 <div>
+                   <p className="text-sm font-medium text-gray-600">Total Restaurants</p>
+                   <p className="text-2xl font-bold text-gray-900">{totalRestaurants}</p>
+                 </div>
+                 <div className="p-3 bg-blue-100 rounded-lg">
+                   <TrendingUp className="w-6 h-6 text-blue-600" />
+                 </div>
+               </div>
+             </div>
+
+             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+               <div className="flex items-center justify-between">
+                 <div>
+                   <p className="text-sm font-medium text-gray-600">Avg Rating</p>
+                   <p className="text-2xl font-bold text-gray-900">
+                     {restaurantsData.length > 0 
+                       ? (restaurantsData.reduce((acc, r) => acc + (r.rating || 0), 0) / restaurantsData.length).toFixed(1)
+                       : '0.0'
+                     }
+                   </p>
+                 </div>
+                 <div className="p-3 bg-yellow-100 rounded-lg">
+                   <Star className="w-6 h-6 text-yellow-600" />
+                 </div>
+               </div>
+             </div>
+
+             <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+               <div className="flex items-center justify-between">
+                 <div>
+                   <p className="text-sm font-medium text-gray-600">Total Reviews</p>
+                   <p className="text-2xl font-bold text-gray-900">
+                     {restaurantsData.reduce((acc, r) => acc + (r.reviews?.length || 0), 0)}
+                   </p>
+                 </div>
+                 <div className="p-3 bg-purple-100 rounded-lg">
+                   <Users className="w-6 h-6 text-purple-600" />
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           {/* Mobile Carousel */}
+           <div className="md:hidden">
+             <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 pb-4">
+               <div className="flex-shrink-0 w-full max-w-sm snap-center">
+                 <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                   <div className="flex items-center justify-between">
+                     <div>
+                       <p className="text-sm font-medium text-gray-600">Verified Restaurants</p>
+                       <p className="text-2xl font-bold text-gray-900">{verifiedRestaurants}</p>
+                     </div>
+                     <div className="p-3 bg-green-100 rounded-lg">
+                       <CheckCircle className="w-6 h-6 text-green-600" />
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+               <div className="flex-shrink-0 w-full max-w-sm snap-center">
+                 <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                   <div className="flex items-center justify-between">
+                     <div>
+                       <p className="text-sm font-medium text-gray-600">Total Restaurants</p>
+                       <p className="text-2xl font-bold text-gray-900">{totalRestaurants}</p>
+                     </div>
+                     <div className="p-3 bg-blue-100 rounded-lg">
+                       <TrendingUp className="w-6 h-6 text-blue-600" />
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+               <div className="flex-shrink-0 w-full max-w-sm snap-center">
+                 <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                   <div className="flex items-center justify-between">
+                     <div>
+                       <p className="text-sm font-medium text-gray-600">Avg Rating</p>
+                       <p className="text-2xl font-bold text-gray-900">
+                         {restaurantsData.length > 0 
+                           ? (restaurantsData.reduce((acc, r) => acc + (r.rating || 0), 0) / restaurantsData.length).toFixed(1)
+                           : '0.0'
+                         }
+                       </p>
+                     </div>
+                     <div className="p-3 bg-yellow-100 rounded-lg">
+                       <Star className="w-6 h-6 text-yellow-600" />
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+               <div className="flex-shrink-0 w-full max-w-sm snap-center">
+                 <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+                   <div className="flex items-center justify-between">
+                     <div>
+                       <p className="text-sm font-medium text-gray-600">Total Reviews</p>
+                       <p className="text-2xl font-bold text-gray-900">
+                         {restaurantsData.reduce((acc, r) => acc + (r.reviews?.length || 0), 0)}
+                       </p>
+                     </div>
+                     <div className="p-3 bg-purple-100 rounded-lg">
+                       <Users className="w-6 h-6 text-purple-600" />
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+
+         {/* Header con mensaje principal */}
+         <div className="mb-6">
+           <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl shadow-sm p-4 border border-green-100">
+             <div className="flex items-center justify-between">
+               <div>
+                 <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-1">
+                   Your health, your food, your choice
+                 </h2>
+                 <p className="text-sm text-gray-600">
+                   Found {filteredRestaurants.length} Verified Restaurant{filteredRestaurants.length !== 1 ? 's' : ''} for your preferences.
+                 </p>
+               </div>
+               <div className="hidden sm:flex items-center justify-center w-12 h-12 bg-green-100 rounded-full">
+                 <span className="text-green-600 text-xl">🌱</span>
+               </div>
+             </div>
+           </div>
+         </div>
+
+         <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
           {/* Sidebar de filtros */}
           <aside className="lg:w-80 lg:flex-shrink-0">
             <div className="lg:sticky lg:top-8">
@@ -209,12 +366,9 @@ export default function Home() {
             </div>
           </aside>
           
-          {/* Contenido principal */}
-          <main className="flex-1 min-w-0">
-            <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-[var(--foreground)]">
-              Found {filteredRestaurants.length} Verified Restaurant{filteredRestaurants.length !== 1 ? 's' : ''}
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+                     {/* Contenido principal */}
+           <main className="flex-1 min-w-0">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
               {filteredRestaurants.length === 0 && (
                 <div className="col-span-full text-center text-gray-500">
                   No verified restaurants found with the selected filters.
