@@ -1195,7 +1195,7 @@
     "name": "Test Restaurant API",
     "category": "Test Category",
     "location": "Test City",
-    "rating": 4.5,
+    "rating": 4.8,
     "price": "$$",
     "description": "Restaurante de prueba para verificar la API",
     "phone": "+1234567890",
@@ -1208,7 +1208,7 @@
       "verification"
     ],
     "id": "1755132152630",
-    "verified": false,
+    "verified": true,
     "createdAt": "2025-08-14T00:42:32.630Z"
   }
 ]
