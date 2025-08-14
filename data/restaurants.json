@@ -1190,5 +1190,25 @@
     "reviews": [],
     "verified": true,
     "createdAt": "2025-08-13T23:04:22.370Z"
+  },
+  {
+    "name": "Test Restaurant API",
+    "category": "Test Category",
+    "location": "Test City",
+    "rating": 4.5,
+    "price": "$$",
+    "description": "Restaurante de prueba para verificar la API",
+    "phone": "+1234567890",
+    "website": "https://test-restaurant.com",
+    "hours": "Mon-Fri: 9AM-10PM",
+    "distance": "2.5",
+    "tags": [
+      "test",
+      "api",
+      "verification"
+    ],
+    "id": "1755132152630",
+    "verified": false,
+    "createdAt": "2025-08-14T00:42:32.630Z"
   }
 ]
