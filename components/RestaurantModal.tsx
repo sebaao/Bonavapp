@@ -78,7 +78,7 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, isOpen, o
   ];
 
   const renderDetailsTab = () => (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="space-y-4 sm:space-y-6 pb-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div className="bg-white/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
           <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900 flex items-center gap-2">
@@ -136,21 +136,21 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, isOpen, o
         </div>
       </div>
       
-      <div className="bg-white/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
+            <div className="bg-white/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
         <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900">Tags & Categories</h3>
-        <div className="flex flex-wrap gap-2 sm:gap-3">
-                      {restaurant.tags.map((tag: string) => (
-              <span key={tag} className="bg-emerald-100 text-emerald-800 border border-emerald-200 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
-                {tag}
-              </span>
-            ))}
+        <div className="flex flex-wrap gap-2 sm:gap-3 pb-2">
+          {restaurant.tags.map((tag: string) => (
+            <span key={tag} className="bg-emerald-100 text-emerald-800 border border-emerald-200 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
     </div>
   );
 
   const renderMenuTab = () => (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="space-y-4 sm:space-y-6 pb-4">
       {restaurant.menu.map((section: any, sectionIndex: number) => (
         <div key={sectionIndex} className="bg-white/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
           <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-gray-900 border-b border-gray-200 pb-2 sm:pb-3">
@@ -173,7 +173,7 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, isOpen, o
   );
 
   const renderReviewsTab = () => (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="space-y-4 sm:space-y-6 pb-4">
       <div className="text-center bg-white/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Customer Reviews</h3>
         <div className="flex items-center justify-center gap-2 sm:gap-3">
@@ -330,7 +330,7 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, isOpen, o
         </div>
 
         {/* Content */}
-        <div className="p-6 overflow-y-auto max-h-[calc(100vh-400px)]">
+        <div className="p-6 overflow-y-auto max-h-[calc(100vh-450px)]">
           {activeTab === "details" && renderDetailsTab()}
           {activeTab === "menu" && renderMenuTab()}
           {activeTab === "reviews" && renderReviewsTab()}
