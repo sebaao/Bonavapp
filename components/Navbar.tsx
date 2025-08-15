@@ -33,10 +33,10 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm">
       {/* Navbar principal */}
-      <div className="flex items-center justify-between px-4 py-3 md:px-11 md:py-4">
+      <div className="flex items-center justify-between px-4 py-3 md:px-11 md:py-4 relative">
         {/* Logo y nombre - centrados en móvil, izquierda en desktop */}
-        <div className="flex items-center md:flex-none">
-          <Link href="/home">
+        <div className="flex items-center justify-center md:justify-start flex-1 md:flex-none">
+          <Link href="/home" className="flex items-center">
             <div className="bg-green-600 rounded-lg p-2 mr-3">
               <Image 
                 src="/images/logo.png" 
@@ -46,8 +46,6 @@ const Navbar: React.FC<NavbarProps> = ({
                 className="rounded"
               />
             </div>
-          </Link>
-          <Link href="/home">
             <span className="text-xl md:text-2xl font-bold text-[var(--accent)] tracking-tight">
               BonaV
             </span>
@@ -65,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({
         {/* Botón hamburguesa - solo visible en móvil */}
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors absolute left-4"
         >
           {isMenuOpen ? (
             <X className="w-6 h-6 text-gray-700" />
